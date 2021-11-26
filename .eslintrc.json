@@ -1,6 +1,7 @@
 {
     "env": {
-        "es2021": true,
+        "es2021": false,
+        "es2020": true,
         "node": true
     },
     "extends": [
@@ -9,28 +10,98 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 13,
+        "ecmaVersion": 2020,
         "sourceType": "module"
     },
     "plugins": [
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
+        "no-multiple-empty-lines": [
             "error",
-            "tab"
+            {
+                "max": 1
+            }
         ],
-        "linebreak-style": [
+        "no-trailing-spaces": [
             "error",
-            "windows"
+            {
+                "ignoreComments": false
+            }
         ],
-        "quotes": [
+        "space-before-function-paren": [
             "error",
-            "double"
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
         ],
-        "semi": [
+        "valid-typeof": [
             "error",
-            "always"
-        ]
+            {
+                "requireStringLiterals": true
+            }
+        ],
+        "camelcase": [
+            "error",
+            {
+                "ignoreDestructuring": true,
+                "ignoreImports": true,
+                "ignoreGlobals": true
+            }
+        ],
+        "no-mixed-spaces-and-tabs": [
+            "error",
+            {
+                "smart-tabs": true
+            }
+        ],
+        "yoda": [
+            "error",
+            {
+                "exceptRange": true,
+                "onlyEquality": false
+            }
+        ],
+        "indent": ["error","tab"],
+        "linebreak-style": ["error","windows"],
+        "quotes": ["error","double"],
+        "curly": ["error", "multi"],
+        "semi": ["error","always"],
+        "eqeqeq": ["error", "always"],
+        "spaced-comment": ["error", "always"],
+        "padded-blocks": ["error","never"],
+        "space-in-parens": ["error", "never"],
+        "func-names": ["error", "never"],
+        "eol-last": ["error", "never"],
+        "no-var": "error",
+        "prefer-const": "error",
+        "no-useless-concat": "error",
+        "capitalized-comments": "error",
+        "default-case": "error",
+        "no-await-in-loop": "error",
+        "no-dupe-keys": "error",
+        "no-duplicate-imports": "error",
+        "no-func-assign": "error",
+        "no-invalid-regexp": "error",
+        "no-loss-of-precision": "error",
+        "no-new-symbol": "error",
+        "no-self-assign": "error",
+        "no-multi-spaces": "error",
+        "no-self-compare": "error",
+        "no-setter-return": "error",
+        "no-sparse-arrays": "error",
+        "no-this-before-super": "error",
+        "no-undef": "error",
+        "no-unmodified-loop-condition": "error",
+        "no-unused-vars": "error",
+        "no-unsafe-negation": "error",
+        "no-unused-private-class-members": "error",
+        "no-use-before-define": "error",
+        "use-isnan": "error",
+        "no-promise-executor-return": "off",
+        "no-inner-declarations": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }
