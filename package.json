@@ -1,0 +1,8 @@
+{
+  "name": "yt-playlist-scrapper",
+  "version": "1.0.0",
+  "description": "A simple YouTube playlist scrapper to know if any videos of the playlist are unavailable.",
+  "main": "index.js",
+  "author": "Nathan Murillo <nathanmurillodeoliveira@gmail.com>",
+  "license": "MIT"
+}
