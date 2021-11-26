@@ -7,7 +7,6 @@
   "author": "Nathan Murillo <nathanmurillodeoliveira@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "eslint": "^8.3.0",
     "prompt": "^1.2.0",
     "puppeteer": "^11.0.0"
   },
@@ -15,6 +14,9 @@
     "@types/eslint": "^8.2.0",
     "@types/node": "^16.11.10",
     "@types/prompt": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   }
