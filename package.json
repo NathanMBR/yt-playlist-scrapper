@@ -5,5 +5,9 @@
   "repository": "https://github.com/NathanMBR/yt-playlist-scrapper.git",
   "main": "index.js",
   "author": "Nathan Murillo <nathanmurillodeoliveira@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prompt": "^1.2.0",
+    "puppeteer": "^11.0.0"
+  }
 }
