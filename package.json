@@ -6,6 +6,13 @@
   "main": "index.js",
   "author": "Nathan Murillo <nathanmurillodeoliveira@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./build/index.ts",
+    "dev": "ts-node ./src/index.ts",
+    "quickstart": "yarn build && yarn start",
+    "qs": "yarn quickstart"
+  },
   "dependencies": {
     "prompt": "^1.2.0",
     "puppeteer": "^11.0.0"
