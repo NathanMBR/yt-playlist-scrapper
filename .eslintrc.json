@@ -51,19 +51,6 @@
                 "ignoreGlobals": true
             }
         ],
-        "no-mixed-spaces-and-tabs": [
-            "error",
-            {
-                "smart-tabs": true
-            }
-        ],
-        "yoda": [
-            "error",
-            {
-                "exceptRange": true,
-                "onlyEquality": false
-            }
-        ],
         "indent": ["error","tab"],
         "linebreak-style": ["error","windows"],
         "quotes": ["error","double"],
