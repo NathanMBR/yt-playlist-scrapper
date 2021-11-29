@@ -57,7 +57,6 @@
         "curly": ["error", "multi"],
         "semi": ["error","always"],
         "eqeqeq": ["error", "always"],
-        "spaced-comment": ["error", "always"],
         "padded-blocks": ["error","never"],
         "space-in-parens": ["error", "never"],
         "func-names": ["error", "never"],
