@@ -11,7 +11,7 @@ const environment = {
 };
 
 Object.keys(environment).forEach(key => {
-	if (!environment[key as keyof typeof environment])
+	if (environment[key as keyof typeof environment] === null)
 		throw new Error("Invalid environment property value.");
 });
 
