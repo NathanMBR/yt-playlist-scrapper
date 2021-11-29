@@ -72,7 +72,6 @@
         "no-var": "error",
         "prefer-const": "error",
         "no-useless-concat": "error",
-        "capitalized-comments": "error",
         "default-case": "error",
         "no-await-in-loop": "error",
         "no-dupe-keys": "error",
