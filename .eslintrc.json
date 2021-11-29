@@ -17,6 +17,13 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "object-curly-spacing": [
+            "error",
+            "always",
+            {
+                "arraysInObjects": true
+            }
+        ],
         "no-multiple-empty-lines": [
             "error",
             {
