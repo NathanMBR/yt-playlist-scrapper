@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-const { VIDEO_HOLDER_ELEMENT } = process.env;
+new Boolean("false");
+const { VIDEO_HOLDER_ELEMENT, HIDE_BROWSER } = process.env;
 
 const environment = {
-	videoHolderElement: VIDEO_HOLDER_ELEMENT || null
+	videoHolderElement: VIDEO_HOLDER_ELEMENT || null,
+	hideBrowser: HIDE_BROWSER === "true"
 };
 
 Object.keys(environment).forEach(key => {
