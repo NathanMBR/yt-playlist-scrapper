@@ -1,1 +1,2 @@
-export * from "./getPlaylistLink";
+export * from "./getPlaylistLink.js";
+export * from "./getEndOfPageElement.js";
