@@ -61,6 +61,7 @@
         "space-in-parens": ["error", "never"],
         "func-names": ["error", "never"],
         "eol-last": ["error", "never"],
+        "comma-dangle": ["error", "never"],
         "no-var": "error",
         "prefer-const": "error",
         "no-useless-concat": "error",
