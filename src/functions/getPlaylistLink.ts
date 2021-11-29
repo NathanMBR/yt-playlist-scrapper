@@ -13,5 +13,5 @@ const schema = {
 export const getPlaylistLink = async () => {
 	const response = await prompt.get(schema);
 
-	return response.url;
+	return response.url as string;
 };
