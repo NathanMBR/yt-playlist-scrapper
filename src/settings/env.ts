@@ -15,4 +15,4 @@ Object.keys(environment).forEach(key => {
 		throw new Error("Invalid environment property value.");
 });
 
-export default environment;
+export { environment } ;
