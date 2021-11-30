@@ -59,6 +59,12 @@
                 "ignoreGlobals": true
             }
         ],
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "^_"
+            }
+        ],
         "indent": ["error","tab"],
         "linebreak-style": ["error","windows"],
         "quotes": ["error","double"],
@@ -89,12 +95,6 @@
         "no-this-before-super": "error",
         "no-undef": "error",
         "no-unmodified-loop-condition": "error",
-        "no-unused-vars": [
-            "error",
-            {
-                "varsIgnorePattern": "^_"
-            }
-        ],
         "no-unsafe-negation": "error",
         "no-unused-private-class-members": "error",
         "no-use-before-define": "error",
