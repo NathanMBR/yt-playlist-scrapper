@@ -1,8 +1,8 @@
-import puppeteer from "puppeteer";
+import { Page } from "puppeteer";
 import { environment } from "../settings/index.js";
 import { awaitTime } from "./helpers/index.js";
 
-export const rollPageUntilEnd = async (page: puppeteer.Page) =>
+export const rollPageUntilEnd = async (page: Page) =>
 	await page.evaluate(
 		async (videoHolderElementEval: string, rollReferenceEval: string, awaitTimeEval: string) => {
 			const videoHolderElementQuery = `${videoHolderElementEval} a#thumbnail`;
