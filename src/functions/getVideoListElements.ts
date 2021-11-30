@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import environment from "../settings/env";
+import environment from "../settings/env.js";
 
 export const getVideoListElements = async (page: puppeteer.Page) =>
 	await page.evaluate(async () => {

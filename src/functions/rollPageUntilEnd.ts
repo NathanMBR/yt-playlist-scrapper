@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
-import { getEndOfPageElement, getVideoListElements } from ".";
-import { awaitTime } from "./helpers";
+import { getEndOfPageElement, getVideoListElements } from "./index.js";
+import { awaitTime } from "./helpers/index.js";
 
 export const rollPageUntilEnd = async (page: puppeteer.Page) =>
 	await page.evaluate(async () => {
