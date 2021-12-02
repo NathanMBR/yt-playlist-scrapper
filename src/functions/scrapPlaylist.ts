@@ -1,5 +1,6 @@
 import puppeteer, { WaitForOptions } from "puppeteer";
 import { environment } from "../settings/index.js";
+import { HiddenVideo } from "./compareVideoLists.js";
 import {
 	rollPageUntilEnd,
 	getVideosList,
@@ -7,7 +8,12 @@ import {
 	awaitTime
 } from "./index.js";
 
-export const scrapPlaylist = async (url: string) => {
+export interface ScrapInfo {
+	listComparison: Array<HiddenVideo>,
+	playlistId: string
+}
+
+export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 	const puppeteerSettings = {
 		launch: {
 			headless: environment.hideBrowser
@@ -17,6 +23,8 @@ export const scrapPlaylist = async (url: string) => {
 			timeout: 0
 		} as WaitForOptions
 	};
+
+	const playlistId = url.split("?list=")[1];
 
 	const browser = await puppeteer.launch(puppeteerSettings.launch);
 
@@ -47,5 +55,8 @@ export const scrapPlaylist = async (url: string) => {
 
 	await browser.close();
 
-	return listComparison;
+	return {
+		listComparison,
+		playlistId
+	};
 };
