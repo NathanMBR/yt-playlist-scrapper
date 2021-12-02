@@ -1,7 +1,7 @@
 type VideoList = Array<string>;
 
 export interface HiddenVideo {
-	index: number;
+	playlistIndex: number;
 	url: string;
 }
 
@@ -13,7 +13,7 @@ export const compareVideoLists = (hiddenList: VideoList, allList: VideoList) => 
 	while (i < allList.length)
 		if (hiddenList[i] !== allList[i])
 			hiddenVideos.push({
-				index: i + hiddenVideos.length + 1,
+				playlistIndex: i + hiddenVideos.length + 1,
 				url: allList.splice(i, 1)[0]
 			});
 		else
