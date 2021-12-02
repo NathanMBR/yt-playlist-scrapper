@@ -1,8 +1,8 @@
 import { ScrapInfo } from "./index.js";
 
 export const showScrapResults = (scrapResults: ScrapInfo) => {
-	const { playlistId } = scrapResults;
-	const listComparison = scrapResults.listComparison.map(
+	const { playlistId, listComparison: listComparisonRaw } = scrapResults;
+	const listComparison = listComparisonRaw.map(
 		item => {
 			item.url += `&list=${playlistId}&index=${item.playlistIndex}`;
 			return item;

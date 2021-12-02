@@ -23,9 +23,7 @@ export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 			timeout: 0
 		} as WaitForOptions
 	};
-
 	const playlistId = url.split("?list=")[1];
-
 	const browser = await puppeteer.launch(puppeteerSettings.launch);
 
 	const hiddenVideosPage = await browser.newPage();
@@ -34,8 +32,14 @@ export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 
 	const allVideosPage = await browser.newPage();
 	await allVideosPage.goto(url, puppeteerSettings.goto);
-
 	const moreOptionsMenu = await allVideosPage.$x(environment.showMenuXPath as string);
+	if (moreOptionsMenu.length < 2) {
+		await browser.close();
+		return {
+			listComparison: [],
+			playlistId
+		};
+	}
 	await moreOptionsMenu[0].click();
 	await awaitTime(500);
 	const loadHiddenVideos = await allVideosPage.$x(environment.loadHiddenVideosXPath as string);
@@ -45,16 +49,13 @@ export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 			allVideosPage.waitForNavigation(puppeteerSettings.goto)
 		]
 	);
-
 	await rollPageUntilEnd(allVideosPage);
 
 	const hiddenVideosList = await getVideosList(hiddenVideosPage);
 	const allVideosList = await getVideosList(allVideosPage);
-
 	const listComparison = compareVideoLists(hiddenVideosList, allVideosList);
 
 	await browser.close();
-
 	return {
 		listComparison,
 		playlistId
