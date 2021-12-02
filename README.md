@@ -4,7 +4,7 @@ A simple YouTube playlist scrapper to know if any videos of one playlist are una
 
 ## Motivation
 
-I did this little project to solve a private problem. The way I hear musics is using YouTube playlists: I add all musics I want to hear into a single playlist. The problem is that some musics get down by copyright claims, and then I have to manually find, remove and reinsert them. This scrapper makes my life easier by finding the claimed videos and giving me their links and playlist positions.
+I did this little project to solve a private problem. The way I hear musics is using YouTube playlists: I add all musics I want to hear into a single playlist. The problem is that some musics get down by copyright claims, and then I have to manually find, remove and reinsert them. Well, not anymore - this scrapper makes my life easier by finding the claimed videos and giving me their links and playlist positions.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ I did this little project to solve a private problem. The way I hear musics is u
 
 ## Usage
 
-The easiest way to run this project is using the `quickstart` script (or its alias `qs`). Simply use the `npm run qs` command (`yarn qs` if you use yarn) at the console: the same will ask your for a YouTube playlist link. Paste it and press enter, and wait for code execution (it might take a while since the code opens the navigator).
+The easiest way to run this project is using the `quickstart` script (or its alias `qs`). Simply use the `npm run qs` command (`yarn qs` if you use yarn) at the console: the same will ask your for a YouTube playlist link. Paste it, press enter and wait for code execution (it might take a while since the code opens the navigator).
 
 ## Environment Variables
 
