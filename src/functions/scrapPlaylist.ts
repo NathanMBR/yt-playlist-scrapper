@@ -46,7 +46,8 @@ export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 	await Promise.all(
 		[
 			loadHiddenVideos[0].click(),
-			allVideosPage.waitForNavigation(puppeteerSettings.goto)
+			allVideosPage.waitForNavigation(puppeteerSettings.goto),
+			awaitTime(1000)
 		]
 	);
 	await rollPageUntilEnd(allVideosPage);
