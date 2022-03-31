@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "node ./build/index.js",
+    "start": "node --enable-source-maps ./build/index.js",
     "dev": "node --loader ts-node/esm ./src/index.ts",
     "quickstart": "yarn build && yarn start",
     "qs": "yarn quickstart"
