@@ -1,4 +1,7 @@
-import puppeteer, { WaitForOptions } from "puppeteer";
+import puppeteer, {
+	LaunchOptions,
+	WaitForOptions
+} from "puppeteer";
 import { environment } from "../settings/index.js";
 import { HiddenVideo } from "./compareVideoLists.js";
 import {
@@ -15,10 +18,10 @@ export interface ScrapInfo {
 
 export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 	const puppeteerSettings = {
-		launch: {
+		launch: <LaunchOptions> {
 			headless: environment.hideBrowser
 		},
-		goto: {
+		goto: <WaitForOptions> {
 			waitUntil: "load",
 			timeout: 0
 		} as WaitForOptions
@@ -28,13 +31,17 @@ export const scrapPlaylist = async (url: string): Promise<ScrapInfo> => {
 
 	const hiddenVideosPage = await browser.newPage();
 	await hiddenVideosPage.goto(url, puppeteerSettings.goto);
+	await awaitTime(5000);
 	await rollPageUntilEnd(hiddenVideosPage);
 
 	const allVideosPage = await browser.newPage();
 	await allVideosPage.goto(url, puppeteerSettings.goto);
+	await awaitTime(5000);
+
 	const moreOptionsMenu = await allVideosPage.$x(environment.showMenuXPath as string);
 	await moreOptionsMenu[0].click();
 	await awaitTime(500);
+
 	const loadHiddenVideos = await allVideosPage.$x(environment.loadHiddenVideosXPath as string);
 	if (loadHiddenVideos.length < 2) {
 		await browser.close();
