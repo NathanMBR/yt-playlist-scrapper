@@ -5,4 +5,5 @@ console.clear();
 getPlaylistLink()
 	.then(scrapPlaylist)
 	.then(showScrapResults)
-	.catch(console.error);
+	.catch(console.error)
+	.finally(() => process.exit(0));
